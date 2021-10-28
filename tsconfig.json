@@ -5,19 +5,60 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "target": "ES2017",
+    "outDir": "out",
+    "declaration": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@api/*": [
+        "./src/api/*"
+      ],
+      "@redux/*": [
+        "./src/redux/*"
+      ],
+      "@layout/*": [
+        "./src/layout/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ]
+    }
   },
   "include": [
-    "src"
+    "src",
+    "webpack.dev.config.ts",
+    "webpack.prod.config.ts"
+  ],
+  "exclude": [
+    "./out/**/*",
+    "./node_modules/**/*"
   ]
 }

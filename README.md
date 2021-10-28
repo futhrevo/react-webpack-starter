@@ -1,2 +1,2 @@
 # react-webpack-starter
-React, Webpack, Typescript, Babel, Eslint, Prettier, Sass
+React, Redux, React Router, Tailwind, Webpack, Typescript, Babel, Eslint, Prettier, Sass

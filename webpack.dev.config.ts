@@ -7,13 +7,19 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 const config: Configuration = {
   mode: 'development',
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/index.tsx'),
   devtool: 'inline-source-map',
   resolve: {
     extensions: ['*', '.tsx', '.ts', '.js', '.jsx'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: './tsconfig.json',
+      }),
+    ],
   },
   output: {
     path: path.resolve(__dirname, './dist'),

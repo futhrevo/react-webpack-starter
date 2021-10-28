@@ -10,7 +10,7 @@ import ESLintPlugin from 'eslint-webpack-plugin';
 
 const config: Configuration = {
   mode: 'production',
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/index.tsx'),
   devtool: 'inline-source-map',
   resolve: {
     extensions: ['*', '.tsx', '.ts', '.js', '.jsx'],
