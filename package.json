@@ -46,6 +46,7 @@
     "react-svg-loader": "^3.0.3",
     "redux-devtools-extension": "^2.13.9",
     "rimraf": "^3.0.2",
+    "sass": "^1.43.4",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.3.0",
     "tailwindcss": "^2.2.17",
