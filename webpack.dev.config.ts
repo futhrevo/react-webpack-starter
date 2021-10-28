@@ -1,13 +1,18 @@
 // https://www.carlrippon.com/creating-react-app-with-typescript-eslint-with-webpack5/
 
 import path from 'path';
-import { Configuration } from 'webpack';
+import { Configuration as WebpackConfiguration } from 'webpack';
+import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
+
+interface Configuration extends WebpackConfiguration {
+  devServer?: WebpackDevServerConfiguration;
+}
 
 const config: Configuration = {
   mode: 'development',
@@ -20,6 +25,15 @@ const config: Configuration = {
         configFile: './tsconfig.json',
       }),
     ],
+  },
+  devServer: {
+    hot: true,
+    client: {
+      overlay: {
+        errors: true,
+        warnings: false,
+      },
+    },
   },
   output: {
     path: path.resolve(__dirname, './dist'),
